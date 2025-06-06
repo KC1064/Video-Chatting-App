@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema(
   {
-    
     fullName: {
       type: String,
       required: true,
@@ -63,6 +62,11 @@ userSchema.pre("save", async function (next) {
     next(error);
   }
 });
+
+userSchema.methods.matchPassword = async function (enteredPass) {
+  const isMatch = await bcrypt.compare(enteredPass, this.password);
+  return isMatch;
+};
 
 const User = mongoose.model("User", userSchema);
 
