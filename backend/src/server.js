@@ -3,8 +3,9 @@ const express = require("express");
 const app = express();
 const dbConnect = require("./lib/db");
 
-dbConnect()
-
+dbConnect();
+//Learning: Missed this so got a type error when checking in POSTMAN
+app.use(express.json());
 const authRoutes = require("./routes/auth.routes");
 app.use("/api/auth", authRoutes);
 
