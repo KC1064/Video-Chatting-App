@@ -8,4 +8,6 @@ router.use(protectedRoute);
 router.get("/", userController.recommendedFriend);
 router.get("/friends", userController.myFriends);
 
+router.post("/friend-requests/:id", userController.sendFriendRequest);
+
 module.exports = router;
