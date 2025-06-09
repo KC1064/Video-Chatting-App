@@ -9,5 +9,9 @@ router.get("/", userController.recommendedFriend);
 router.get("/friends", userController.myFriends);
 
 router.post("/friend-requests/:id", userController.sendFriendRequest);
+router.put("/friend-requests/:id/accept", userController.acceptFriendReq);
+
+router.get("/friend-requests", userController.getFriendReq);
+router.get("/outgoing-friend-requests", userController.outgoingFriendReqs);
 
 module.exports = router;
