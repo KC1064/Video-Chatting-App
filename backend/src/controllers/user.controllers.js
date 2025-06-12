@@ -3,8 +3,8 @@ const FriendRequest = require("../models/friendRequest.model");
 
 const recommendedFriend = async (req, res) => {
   try {
-    const currUserId = req.user.id;
-    const currUser = req.user;
+    const currentUserId = req.user.id;
+    const currentUser = req.user;
 
     const recommendedUsers = await User.find({
       $and: [
