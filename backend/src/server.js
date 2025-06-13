@@ -14,8 +14,10 @@ app.use(
   })
 );
 const authRoutes = require("./routes/auth.routes");
+const chatRoutes = require("./routes/chat.routes");
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server started on port ${process.env.PORT}`);

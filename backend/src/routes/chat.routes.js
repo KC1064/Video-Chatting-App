@@ -5,4 +5,4 @@ const router = express.Router();
 
 router.get("/token", protectedRoute, chatController.getStreamToken);
 
-export default router;
+module.exports = router;
