@@ -9,7 +9,7 @@ router.post("/logout", authController.logout);
 router.post("/onboarding", protectedRoute, authController.onboarding);
 
 //Check if user is logged in or not
-router.get("/me", protectRoute, (req, res) => {
+router.get("/me", protectedRoute, (req, res) => {
   res.status(200).json({ success: true, user: req.user });
 });
 

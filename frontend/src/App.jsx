@@ -21,6 +21,7 @@ const App = () => {
   });
 
   const authUser = authData?.user;
+
   return (
     <Routes>
       <Route
